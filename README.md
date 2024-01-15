@@ -24,9 +24,9 @@ Features presented:
 An example:
 
 
-<img width="672" alt="image" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/e9d60c72-5f47-4fe9-a83b-d3d408c724e7">
+<img width="600" alt="image832" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/1bc4cd0b-431e-45c3-9589-adcc88e133f3">
 
-<img width="672" alt="image" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/9aee141e-d9ed-4990-8606-25ed0f89d081">
+<img width="600" alt="image1060" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/1c438469-193c-4aae-b2b1-b8d5e8a73c60">
 
 Special thanks to the GraphHopper Team & Co-Founder Peter for providing upgraded API usage for the functionality of the project.
 
