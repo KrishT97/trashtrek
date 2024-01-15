@@ -1,5 +1,5 @@
 # Truck Route Planner
-Optimization of Truck Logistics for the Disposal of Voluminous Waste: A Multicriteria Approach
+### Optimization of Truck Logistics for the Disposal of Voluminous Waste: A Multicriteria Approach
 
 The objective of this project is the development of software to optimize the management of the
 collection of voluminous waste, specifically addressing the challenges associated with
@@ -23,15 +23,13 @@ Features presented:
 
 An example:
 
-
+<br/><br/>
 <img width="600" alt="image832" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/1bc4cd0b-431e-45c3-9589-adcc88e133f3">
-
+<br/><br/>
 <img width="600" alt="image1060" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/1c438469-193c-4aae-b2b1-b8d5e8a73c60">
-
+<br/><br/>
 Special thanks to the GraphHopper Team & Co-Founder Peter for providing upgraded API usage for the functionality of the project.
-
 In collaboration with Monentia, technological consultancy & information systems development company in Spain. 
-
 As well as institution of Universidad Las Palmas de Gran Canaria. 
 
 
