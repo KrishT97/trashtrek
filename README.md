@@ -34,8 +34,8 @@ The goal is to _**minimize** distance and awaited time costs_ and _**maximize** 
 There are various restrictions that are verified within each iteration, here are the following:
 - Number of trucks in service cannot exceed the limit of trucks specified initially.
 - Each truck will have an estimated time worked, it should not exceed to the limit defined as per the maximum working time.
-- For each request, there should only be one truck assignmed to it.
-- There is a dissatention time gathered for each request that is not attended on that day is left for the next day. There is a maximum of days the request remains unattended and should receive maximum priority upon getting close to that limit of maximum defined.
+- For each request, there should only be one truck assigned to it.
+- There is a dissatention time gathered for each request that is not attended on that day, is left for the next day. There is a maximum of days the request remains unattended and should receive maximum priority upon getting close to that limit of maximum defined.
 - Each truck has a maximum capacity, it should not attend more requests if capacity of the vehicle has reached its limit, it returns back to base.
 
 
