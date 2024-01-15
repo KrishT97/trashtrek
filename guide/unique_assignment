@@ -1,9 +1,0 @@
-## Checking unique assignment for each truck
-
-Each truck and request association has to be unique. It cannot be that truck 1 has request number 8 to attend and truck 2 also has that request.
-
-Every single request should have only one truck assigned to it, if not, there are routing errors and the optimization fails. 
-The system is not designed to create those errors in the first place, but to make sure, a condition is added to correct the error if the mistake is somehow made.
-
-The basic idea is to analyze each row in the assignment of trucks and requests matrix and see if the sum of any row is > 1.
-
