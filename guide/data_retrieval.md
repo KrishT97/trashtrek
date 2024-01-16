@@ -2,7 +2,7 @@
 
 As for the parameter costs, that data had to be retrieved from somewhere. The distance from truck to request and time awaited/taken may seem correlated, as to one might think that if there is a large distance, so would the time awaited be larger.
 
-However there may be cases for how in certain scenarios, the distance and time taken might not be correlated. For example if the location of request is located up on a hill road, for which, the distance recorded might not be much, but because it is an incline, the vehicle takes longer than expected with a decline road, we get much faster to the destination. The same is true in reverse.
+However there may be cases for how in certain scenarios, the distance and time taken might not be correlated. For example if the location of request is located up on a hill road, for which, the distance recorded might not be much, but because it is an incline, the vehicle takes longer than expected. With a decline road, we get much faster to the destination.
 
 Therefore considering both as separate parameters, and also because the optimization is revolved around a mountainous location like Gran Canaria, it is safe to work with this analogy.
 
