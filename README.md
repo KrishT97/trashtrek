@@ -6,7 +6,7 @@ collection of voluminous waste, specifically addressing the challenges associate
 **Traveling Salesman Problem** (TSP) and the **Vehicle Routing Problem** (VRP). 
 
 These problems, being NP-complete, present a series of complexities that require intelligent and efficient solutions to ensure optimal route management.
-The development of efficient software for bulky waste management must address these
+The development of efficient software for voluminous waste management must address these
 mathematical challenges and advanced algorithms, providing approximate solutions that can
 approach the optimal solution in reasonable computational times. The successful implementation of these
 strategies will ensure efficient and sustainable route management.
@@ -19,7 +19,7 @@ General challenges faced, part of which are comprised within TSP and VRP type of
 
 The project delves into the specific location of Gran Canaria in Canary Islands, but can be replicated towards other cases.
 
-Features presented:
+Features presented in the project:
 
 - Distance by road and estimated time calculated with **GraphHopper Routing API**
 - Real map generated with **Folium**
@@ -46,6 +46,9 @@ An example:
 <br/><br/>
 <img width="600" alt="image1060" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/1c438469-193c-4aae-b2b1-b8d5e8a73c60">
 <br/><br/>
+
+Within the visualization results for different examples, the order signifies the sequence for the trucks attendance, the starting point is the initial coordinates for each truck, each mark is then the request to be attended by truck _x_ and order _y_, in the end all trucks return back to base. 
+
 Special thanks to the GraphHopper Team & Co-Founder Peter for providing upgraded API usage for the functionality of the project. 
 
 This could only have been done because of the collaboration with Monentia, technological consultancy & information systems development company in Gran Canaria, Spain. As well as institution of Universidad Las Palmas de Gran Canaria for the approval of final project. 
