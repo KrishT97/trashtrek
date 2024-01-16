@@ -49,6 +49,8 @@ An example:
 
 Within the visualization results for different examples, the order signifies the sequence for the trucks attendance, the starting point is the initial coordinates for each truck, each mark is then the request to be attended by truck _x_ and order _y_, in the end all trucks return back to base. 
 
+The interactive maps are saved as __html__ files, they should be opened explicitely externally.
+
 Special thanks to the GraphHopper Team & Co-Founder Peter for providing upgraded API usage for the functionality of the project. 
 
 This could only have been done because of the collaboration with Monentia, technological consultancy & information systems development company in Gran Canaria, Spain. As well as institution of Universidad Las Palmas de Gran Canaria for the approval of final project. 
