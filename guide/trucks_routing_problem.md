@@ -28,7 +28,7 @@ After the section, an additional factor will now be added, making a new request 
 
   This solves the issue, distance and time taken of returning routes that are large will consequently mean that the 
   request is located far away from base, and if the truck travels to that location, it also has to be able to come 
-  back leading to additional consumption.
+  back leading to additional consumption. Leading to higher parameter and global costs associated to the request. 
 
 A few advantages to this proposal and its implementation:
 - Realistic Scenario Modeling:
