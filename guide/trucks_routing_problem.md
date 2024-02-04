@@ -1,4 +1,4 @@
-### Implementation of trucks returning back to base
+## Implementation of trucks returning back to base
 
 One fundamental aspect to consider upon establishing the routes for the trucks is the starting point (which usually is 
 from a waste disposal area, base as to be referred) and that after completing the requests, must return back to base
