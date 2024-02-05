@@ -1,7 +1,6 @@
 ## What if there is only one truck available to attend the requests?
 
-It just so happens that the ModelValidator class is responsible for the verification of all the requirements being 
-fulfilled in terms of the restrictions that the trucks have (truck capacity, limit of time worked, unique assignment..etc) which can alter the matrices of the assignments of trucks to requests. 
+It just so happens that the ModelValidator class is responsible for the verification of all the requirements being fulfilled in terms of the restrictions that the trucks have (truck capacity, limit of time worked, unique assignment..etc) which can alter the matrices of the assignments of trucks to requests. 
 
 Suppose the following example:
 
