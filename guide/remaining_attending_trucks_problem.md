@@ -8,7 +8,7 @@ which can alter the matrices of the assignments of trucks to requests. Suppose t
 $$  \begin{bmatrix}
     [0 && 0 && 1] \\
     [0 && 0 && 1] \\
-    [0 && 0 && 0] \\
+    [0 && 0 && 0] \\ <---No assignment
     [0 && 1 && 0] \\
     [0 && 1 && 0] \\
     [0 && 1 && 0] \\
@@ -38,7 +38,9 @@ $$  \begin{bmatrix}
 ```
 
  As the two trucks have been eliminated from the available assignments to be carried out by trucks, returning back to base
- and there is only one truck left with two requests to attend (Request 3 and 7). There might be initially considering, 
+ and there is only one truck left with two requests to attend (Request 3 and 7). 
+ 
+ There might be, initially considering, 
  no reason why one must continue exploring the minimal route, and it wouldn't make sense to calculate parameter and global costs and select
  the best route for the intercepting trucks with the hungarium algorithm either if there is just one truck remaining. 
  So at this instance and as with empirical evidence of errors occurring, the application is detained, and the results up to the moment are provided.
