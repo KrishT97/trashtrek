@@ -8,7 +8,7 @@ which can alter the matrices of the assignments of trucks to requests. Suppose t
 $$  \begin{bmatrix}
     [0 && 0 && 1] \\
     [0 && 0 && 1] \\
-    [0 && 0 && 0] \\ <---No assignment
+    [0 && 0 && 0] <---No assignment \\ 
     [0 && 1 && 0] \\
     [0 && 1 && 0] \\
     [0 && 1 && 0] \\
