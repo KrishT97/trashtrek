@@ -4,13 +4,17 @@ It just so happens that the ModelValidator class is responsible for the verifica
 fulfilled in terms of the restrictions that the trucks have (truck capacity, limit of time worked, unique assignment..etc)
 which can alter the matrices of the assignments of trucks to requests. Suppose the following example:
 
-[[0 0 1]
- [0 0 1]
- [0 0 0]
- [0 1 0]
- [0 1 0]
- [0 1 0]
- [0 0 0]]
+```math
+$$  \begin{bmatrix}
+    [0 && 0 && 1] \\
+    [0 && 0 && 1] \\
+    [0 && 0 && 0] \\
+    [0 && 1 && 0] \\
+    [0 && 1 && 0] \\
+    [0 && 1 && 0] \\
+    [0 && 0 && 0] 
+    \end{bmatrix} $$
+```
 
  As it might be interpretable, there are 3 Trucks and 7 Requests. Turns out, the algorithm detects that Truck 2 and 3 
  have gotten close to occupying it's maximum capacity. I say close because it wouldn't be precise to have a restriction that 
@@ -20,14 +24,18 @@ which can alter the matrices of the assignments of trucks to requests. Suppose t
  more requests.
  Back to the example, if both Trucks 2 and 3 have not complied with the maximum capacity restriction, then they will be
  removed from the variable matrix of assignments, thus leading to this situation:
-
- [[0]
- [0]
- [0]
- [0]
- [0]
- [0]
- [0]]
+ 
+```math
+$$  \begin{bmatrix}
+    [0] \\
+    [0] \\
+    [0] \\
+    [0] \\
+    [0] \\
+    [0] \\
+    [0] 
+    \end{bmatrix} $$
+```
 
  As the two trucks have been eliminated from the available assignments to be carried out by trucks, returning back to base
  and there is only one truck left with two requests to attend (Request 3 and 7). There might be initially considering, 
