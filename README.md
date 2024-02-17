@@ -200,7 +200,7 @@ Upon successful execution of the TrashTrek Web Service, you will receive a JSON 
 
 * Special thanks to the _GraphHopper Team_ & _Co-Founder Peter_ for providing an extended trial with upgraded API usage for the functionality of the project.
 
-* Under tutoring & monitoring by Dr. José Juan Hernández Cabrera, from the department of _Information & Systems_ in the field of _Computational Sciences & Artificial Intelligence_ in the ULPGC
+* Under tutoring & monitoring by _Dr. José Juan Hernández Cabrera_, from the department of _Information & Systems_ in the field of _Computational Sciences & Artificial Intelligence_ in the ULPGC.
 
 * This could only have been done because of the collaboration with **Monentia**, technological consultancy & information systems development company in Gran Canaria, Spain. As well as members & staff of institution ULPGC (**Universidad Las Palmas de Gran Canaria**) for the overall guidance & approval of the final degree project. 
 
