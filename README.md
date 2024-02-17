@@ -97,7 +97,7 @@ docker build -t trashtrek:latest .
 
 ### Container Parameters
 
-*`-p YOUR_CHOSEN_PORT:5000` - Choose the port you want the application to be accessible on your local machine.
+* `-p YOUR_CHOSEN_PORT:5000` - Choose the port you want the application to be accessible on your local machine.
 
 The Flask app inside the Docker container always listens on port 5000, and users can choose any available port on their host machine to map to port 5000 in the container.
 
