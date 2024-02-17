@@ -39,7 +39,7 @@ There are various restrictions that are verified within each iteration, here are
 - There is a dissatention time gathered for each request that is not attended on that day, is left for the next day. There is a maximum of days the request remains unattended and should receive maximum priority upon getting close to that limit of maximum defined.
 - Each truck has a maximum capacity, it should not attend more requests if capacity of the vehicle has reached its limit, it returns back to base.
 
-More information on problem-solving implementations in the _guide_ folder of the repository.
+More information on problem-solving implementations in the **_guide_** folder of the repository.
 
 An example:
 
@@ -51,7 +51,7 @@ An example:
 
 Within the visualization results for different examples, the order signifies the sequence for the trucks attendance, the starting point is the initial coordinates for each truck, each mark is then the request to be attended by truck _x_ and order _y_, in the end all trucks return back to base. 
 
-The interactive maps are saved as __html__ files, they should be opened explicitely externally.
+The interactive maps are saved as __html__ files, they should be opened explicitely externally (e.g. GET request from POSTMAN).
 
 ## Software Architecture
 
