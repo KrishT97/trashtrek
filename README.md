@@ -55,7 +55,7 @@ The interactive maps are saved as __html__ files, they should be opened explicit
 
 ## Software Architecture
 
-
+<img width="600" alt="architecture" src="https://github.com/KrishT97/trashtrek/assets/92883393/80c2d168-46a6-4934-9c71-2f43775e70d7">
 
 <h2>Getting started <img align="center" height="50" src="https://github.com/KrishT97/trashtrek/assets/92883393/6fa6e9cc-5371-4637-9117-c1831ba17454"></h2>
 
