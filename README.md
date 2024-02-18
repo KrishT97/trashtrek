@@ -41,13 +41,9 @@ There are various restrictions that are verified within each iteration, here are
 
 More information on problem-solving implementations in the **_guide_** folder of the repository.
 
-An example:
+An example of routing abstraction:
 
-<br/><br/>
-<img width="600" alt="image832" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/1bc4cd0b-431e-45c3-9589-adcc88e133f3">
-<br/><br/>
-<img width="600" alt="image1060" src="https://github.com/KrishT97/truck_route_planner/assets/92883393/1c438469-193c-4aae-b2b1-b8d5e8a73c60">
-<br/><br/>
+<img src="https://github.com/KrishT97/trashtrek/blob/main/extras/routing_example.gif" width="600" height="320"/>
 
 Within the visualization results for different examples, the order signifies the sequence for the trucks attendance, the starting point is the initial coordinates for each truck, each mark is then the request to be attended by truck _x_ and order _y_, in the end all trucks return back to base. 
 
