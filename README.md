@@ -182,13 +182,14 @@ Upon successful execution of the TrashTrek Web Service, you will receive a JSON 
 
 ```json
 {
-  "optimized_route": [
-    {"location": [40.7128, -74.0060], "quantity": 20, "assigned_to": "Driver1"},
-    {"location": [41.8781, -87.6298], "quantity": 25, "assigned_to": "Driver2"},
-    {"location": [34.0522, -118.2437], "quantity": 30, "assigned_to": "Driver1"}
-  ],
-  "total_distance": 150.5,
-  "total_cost": 35.75
+    "message": "Success!",
+    "result": {
+        "assignedRequestsOrderByTruck": "[3, 5, 1, 2, 4, 0]",
+        "assignmentMatrixTruckRequest": "[[0, 0, 1], [0, 0, 1], [1, 0, 0], [1, 0, 0], [0, 1, 0], [0, 1, 0]]",
+        "basicRouteURL": "http://localhost:YOUR_CHOSEN_PORT/results/basic_map_with_routes.html?v=1",
+        "globalAttendanceOrder": "[1, 3, 5, 0, 2, 4]",
+        "orderedRouteURL": "http://localhost:YOUR_CHOSEN_PORT/results/map_with_order_routes.html?v=1"
+    }
 }
 ```
 
