@@ -77,7 +77,7 @@ class ModelValidator:
     def check_truck_capacity(self):
         list_of_i_values = [i for i in range(len(self.assignment_truck_request[0])) if sum(
             self.volumes_requests[z] for z in range(len(self.assignment_truck_request[:, 0])) if
-            self.assignment_truck_request[z, i] == 1) >= self.maximum_truck_capacity]
+            self.assignment_truck_request[z, i] == 1) >= self.maximum_truck_capacity - 1]
 
         self.assignment_truck_request = np.delete(self.assignment_truck_request, list_of_i_values, 1)
 

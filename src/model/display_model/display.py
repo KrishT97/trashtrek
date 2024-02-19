@@ -2,19 +2,27 @@ import networkx as nx
 import math
 from pyvis.network import Network
 import folium
-from folium import plugins
 import requests
+import os
 
 
 class Display:
 
-    def __init__(self):
+    def __init__(self, graphhopper_api_key):
         self.graph = nx.DiGraph()
         self.interactive_network = Network(notebook=False, height="700px", width="100%")
         self.interactive_map = folium.Map(location=[28.00928603655914, -15.482817464516128], zoom_start=10)
-        self.truck_colors = {0: 'blue', 1: 'red', 2: 'green', 3: 'cadetblue', 4: 'black', 5: 'purple', 6: 'beige'}
+        self.truck_colors = {0: 'blue', 1: 'red', 2: 'green', 3: 'pink', 4: 'black', 5: 'purple', 6: 'beige',
+                             7: 'cadetblue', 8:'white', 9:'lightgreen', 10: 'lightgray', 11: 'darkred', 12: 'darkblue',
+                             13: 'darkpurple', 14: 'lightred', 15: 'darkgreen'}
         self.request_colors = 'orange'
-        self.graphhopper_api_key = "YOUR_API_KEY"
+        self.graphhopper_api_key = graphhopper_api_key
+        self.color_type = {'truck': 'lightblue', 'petition': 'lightgreen'}
+        self.initial_trucks_coordinates = None
+        self.result_directory = "application/results"
+
+    def store_initial_data(self, initial_trucks_coordinates):
+        self.initial_trucks_coordinates = initial_trucks_coordinates
 
     def draw_graph(self, trucks_coordinates, requests_coordinates):
         self.graph.add_nodes_from(trucks_coordinates, type="truck")
@@ -49,7 +57,6 @@ class Display:
               math.factorial(len(requests_coordinates) - 1))
 
     def get_route_from_graphhopper(self, start, end):
-
         url = f'https://graphhopper.com/api/1/route?point={start[0]},{start[1]}&point={end[0]},{end[1]}&points_encoded=False&vehicle=car&key={self.graphhopper_api_key}'
         response = requests.get(url)
         route_data = response.json()
@@ -60,8 +67,30 @@ class Display:
 
         return coordinates
 
-    def draw_graph_folium_results(self, trucks_coordinates, requests_coordinates, assigned_matrix,
-                                  order_indexes):
+    def draw_basic_graph(self, trucks_coordinates, petitions_coordinates, base_url):
+
+        for node in trucks_coordinates:
+            lat, lon = node
+            folium.Marker([lat, lon], popup=f"Truck: {node}", icon=folium.Icon(color='blue')).add_to(
+                self.interactive_map)
+
+        for node in petitions_coordinates:
+            lat, lon = node
+            folium.Marker([lat, lon], popup=f"Petition: {node}", icon=folium.Icon(color='green')).add_to(
+                self.interactive_map)
+
+        for initial in trucks_coordinates:
+            for end in trucks_coordinates + petitions_coordinates:
+                if initial != end:
+                    route = self.get_route_from_graphhopper(initial, end)
+                    folium.PolyLine(route, color="gray", weight=3, opacity=0.7).add_to(self.interactive_map)
+
+        result_file_path = f"{self.result_directory}/basic_map_with_routes.html"
+        self.interactive_map.save(result_file_path)
+        return base_url + "results/" + "basic_map_with_routes.html"
+
+    def draw_graph_order_routes(self, trucks_coordinates, requests_coordinates, assigned_matrix,
+                                order_indexes, base_url):
 
         for i, node in enumerate(trucks_coordinates):
             lat, lon = node
@@ -71,33 +100,37 @@ class Display:
 
         for i, node in enumerate(requests_coordinates):
             lat, lon = node
-            folium.Marker([lat, lon], popup=f"Petition {i}", icon=folium.Icon(color=self.request_colors)).add_to(
-                self.interactive_map)
+            request_color = self.request_colors
+            request_index = i
+            attending_trucks = [truck_index for truck_index, value in enumerate(assigned_matrix[request_index, :]) if
+                                value]
+            truck_info = ", ".join([f"Truck {truck}" for truck in attending_trucks])
+            popup_text = f"Request {i} attended by {truck_info}"
+            folium.Marker([lat, lon], popup=folium.Popup(popup_text, parse_html=True),
+                          icon=folium.Icon(color=request_color)).add_to(self.interactive_map)
 
-        for i in range(len(order_indexes) - 1):
-            start_request = order_indexes[i]
-            end_request = order_indexes[i + 1]
+        for i, truck_node in enumerate(trucks_coordinates):
+            truck_color = self.truck_colors.get(i, 'gray')
 
-            start_truck = assigned_matrix[start_request].nonzero()[0][0]
-            end_truck = assigned_matrix[end_request].nonzero()[0][0]
+            attended_requests = [index for index, value in enumerate(assigned_matrix[:, i]) if value]
 
-            route = self.get_route_from_graphhopper(
-                requests_coordinates[start_request], requests_coordinates[end_request]
-            )
+            for request_index in attended_requests:
+                route = self.get_route_from_graphhopper(truck_node, requests_coordinates[request_index])
+                folium.PolyLine(route, color=truck_color, weight=3, opacity=0.7).add_to(self.interactive_map)
 
-            truck_color = self.truck_colors.get(start_truck, 'gray')
-            folium.PolyLine(route, color=truck_color, weight=3, opacity=0.7).add_to(self.interactive_map)
+        for i, request_index in enumerate(order_indexes):
+            lat, lon = requests_coordinates[request_index]
+            order_text = f"Order nº {i + 1}"
+            request_color = self.request_colors
+            attending_trucks = [truck_index for truck_index, value in enumerate(assigned_matrix[request_index, :]) if
+                                value]
+            truck_info = ", ".join([f"Truck {truck}" for truck in attending_trucks])
+            popup_text = f"{truck_info}:\n{order_text}\n"
+            folium.Marker([lat, lon], popup=folium.Popup(popup_text, parse_html=True),
+                          icon=folium.Icon(color=request_color)).add_to(self.interactive_map)
 
-            lat, lon = requests_coordinates[start_request]
-            order_text = f"Truck {start_truck}: Order {i + 1}"
-            folium.Marker([lat, lon], popup=folium.Popup(order_text, parse_html=True),
-                          icon=folium.Icon(color=truck_color)).add_to(self.interactive_map)
+        result_file_path = f"{self.result_directory}/map_with_order_routes.html"
+        self.interactive_map.save(result_file_path)
+        return base_url + "results/" + "map_with_order_routes.html"
 
-        last_request = order_indexes[-1]
-        last_truck = assigned_matrix[last_request].nonzero()[0][0]
-        lat, lon = requests_coordinates[last_request]
-        last_order_text = f"Truck {last_truck}: Order {len(order_indexes)}"
-        folium.Marker([lat, lon], popup=folium.Popup(last_order_text, parse_html=True),
-                      icon=folium.Icon(color=self.truck_colors.get(last_truck, 'gray'))).add_to(self.interactive_map)
 
-        self.interactive_map.save("interactive_map_with_routes_results.html")
