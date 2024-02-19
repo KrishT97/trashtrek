@@ -47,6 +47,8 @@ An example of a routing abstraction:
 
 Within the visualization results for different examples, the order signifies the sequence for the trucks attendance, the starting point is the initial coordinates for each truck, each mark is then the request to be attended by truck _x_ and order _y_, in the end all trucks return back to base. 
 
+Please read: _visualization_results_analysis.md_ within the _guide_ folder to review an example case from the results and visualizations made, adressing routing concerns. 
+
 The interactive maps are saved as __html__ files, they should be opened explicitely externally (e.g. GET request from POSTMAN).
 
 ## Software Architecture
