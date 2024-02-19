@@ -1,6 +1,6 @@
 ## Solving the Assignment Problem
 
-When each combination of truck and request results in a global cost, for which, if the problem where to be represented in
+When each combination of truck and request results in a global cost, for which, if the problem were to be represented in
 3 Trucks and 10 Requests as an example, there would be 30 different global costs, and that leads to an assignment problem. 
 We will enumerate the problems with real examples:
 
@@ -33,7 +33,7 @@ favor for Truck 2 attending Petition 8.
 As probably guessed, the problem keeps repeating in a cycle, a convergence error.
 
 2) **When a request is attended by a truck, the coordinates of the truck is updated to being of the request, because attending the request means you are
-traveling to that particular location which is going to be the request coordinates**
+traveling to that particular location which is going to be the request coordinates. What happens upon arriving to the request location and the request remains active for the next iteration?**
 
 In another case example:
 
@@ -45,19 +45,19 @@ $$  \begin{bmatrix}
     \end{bmatrix} $$
 ```
 
-If, for example, Truck 2 attends Request 8, and the coordinates are updated, in the next iteration, this occurs:
-that the value of the Request 8 in Truck 2 will always be the minimum compared to others because the distance cost
-is 0 and time cost is also 0 (being in the same location), so the same request will be chosen to be attended again.
+If, for example, Truck 2 attends Request 8, and the coordinates are updated. In the next iteration, this occurs:
+_that the value of the Request 8 in Truck 2 will always be the minimum compared to others because the distance cost
+is 0 and time cost is also 0 (being in the same location)_, so the same request will be chosen to be attended again.
 
 
 A possible solution is to remove the request from the assignment matrix and the
-respective data of the attended request (Request 8) but I cannot, because internally some of the operations
-requires that the data be the same size as the beginning. This has been semi-resolved because
-what I do is choose the "second minimum" for second iterations forward. But this is also not a precise solution as to with this is that priority is always given in all iterations 
+respective data of the attended request (Request 8) but it cannot be done so in a simple way, because internally, some of the operations
+requires that the data be the same size as the beginning (also resolved later, however the minimum selection approach is discarded due to other drawbacks of the method). This could also bee semi-resolved because
+what is done, is to choose the "second minimum" for second iterations forward. But this is also not a precise solution as to with this is that priority is always given in all iterations 
 to the minimum value and the second minimum, and those two convergence values ​​are chosen, not taking into account other values.
 
-Other problems may occur, for example if there are identical minimum values for global costs in two or more trucks. 
-Which truck is then prioritized? The idea is that all trucks work collectively, where one truck attends certain requests and another, others in line, in the manner of which one compensates the aother.
+Other problems may occur, for example if there are _identical minimum values for global costs in two or more trucks_. 
+**Which truck is then prioritized?** The idea is that all trucks work collectively, where one truck attends certain requests and another, others in line, in the manner of which one compensates the aother.
 
 ### Hungarian Algorithm to the rescue
 
