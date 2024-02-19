@@ -1,15 +1,15 @@
 ## How truck time calculation works
 
-The idea is to calculate the total minutes each vehicle works in the given iteration, this data is retrieved through the assignments of the trucks to requests and the time in minutes estimations for each of those assignments. 
-However, this is a complicated task, as the assignment matrix remains stagnant but the time estimated array gets modified as the estimates are only captured for unassigned requests in the current iteration, so the right indices must be associated for assignments to time estimates.
+The idea is to calculate the total minutes each vehicle works in the given iteration, this data is retrieved through the _assignment matrix of the trucks to requests_ and the _time in minutes estimations_ for each of those assignments. 
+However, this is a complicated task, as the assignment matrix remains stagnant, but the time estimated array gets modified as the estimates are only captured for unassigned requests in the current iteration, so the right indices must be associated for assignments (in the matrix) to the time estimates.
 
 - Here is the theory behind how the designated algorithm for this function works, the example is defined with 3 trucks and 10 requests to be solved.
 
-As mentioned, the time estimated array is only considered for those requests that are not assigned, so we can't directly assign the indices also, because it is modified and we have to associate the right indices. 
+As mentioned, the **time estimated array** (time in minutes estimations in array) is only considered for those requests that are not assigned, so we can't directly assign the indices also, because it is modified and we have to associate the right indices. 
 
 ### Iteration 1
 
-Now say we start out with this matrix as our assignment of truck & request matrix (the column being each truck and row each request):
+Now say we start out with this matrix as our assignment of truck & request matrix (the column being each truck and row, each request):
 
 ```math
 $$  \begin{bmatrix}
