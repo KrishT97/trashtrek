@@ -42,7 +42,7 @@ def run_logic(limit_work_minutes,
     activate_display = True
 
     # MAIN ALGORITHM LOOP
-    for i in range(10):
+    for i in range(100):
 
         app.logger.info("---------------------------------------------------------------------- \n")
 
