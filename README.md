@@ -41,7 +41,7 @@ There are various restrictions that are verified within each iteration, here are
 
 More information on problem-solving implementations in the **_guide_** folder of the repository.
 
-An example of routing abstraction:
+An example of a routing abstraction:
 
 <img src="https://github.com/KrishT97/trashtrek/blob/main/extras/routing_example.gif" width="600" height="320"/>
 
