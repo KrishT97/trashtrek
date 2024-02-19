@@ -49,7 +49,11 @@ Within the visualization results for different examples, the order signifies the
 
 Please read: _visualization_results_analysis.md_ within the _guide_ folder to review an example case from the results and visualizations made, adressing routing concerns. 
 
-The interactive maps are saved as __html__ files, they should be opened explicitely externally (e.g. GET request from POSTMAN).
+The interactive maps are saved as __html__ files:
+
+<img src="https://github.com/KrishT97/trashtrek/blob/main/extras/map_order_routes.gif" width="600"/>
+
+To be opened explicitely externally (e.g. GET request from POSTMAN).
 
 ## Software Architecture
 
