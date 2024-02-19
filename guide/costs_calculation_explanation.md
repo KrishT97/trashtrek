@@ -6,13 +6,13 @@ As the problem statement abbreviates a **multicriteria** approach, there are 3 c
 - Occupation costs for Truck<sub>i</sub>
 - Time awaited by user with Request<sub>x</sub>
 
-Considering that the global cost will be obtained my minimizing road distances and time awaited by user, whilst maximizing occupation of the vehicle.
+Considering that the global cost will be obtained my _minimizing_ road distances and time awaited by user, whilst _maximizing_ occupation of the vehicle.
 
-This means that the ideal case to be solved first would be an object/s of maximum size to be disposed, that is located under minimum distance and uses minimum time awaited.
+This means that the ideal case to be solved first would be an object/s of maximum size to be disposed, that is located under minimum distance and uses minimum time awaited. Keeping in mind that distance and time both don't have to be correlated (_eg. an incline road in terms of distance could be of low cost but high when it comes to time due to energy consumption of the vehicle and acceleration_).
 
 The weights are defined for each parameter, and the lists of arrays are normalized in scale of 0,1 to compare the parameters amongst themselves:
 
-globalCost= 𝑤_𝑑𝑖𝑠𝑡 · 𝑋 (𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑑𝑖𝑠𝑡) − 𝑤_𝑜𝑐𝑢𝑝 · 𝑋 (𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑜𝑐𝑢𝑝) + 𝑤_𝑡𝑖me · 𝑋 (𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑡𝑖me)
+globalCost= 𝑤<sub>dist</sub> · 𝑋<sub>𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑑𝑖𝑠𝑡</sub> − 𝑤<sub>𝑜𝑐𝑢𝑝</sub> · 𝑋<sub>𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑜𝑐𝑢𝑝</sub> + 𝑤<sub>𝑡𝑖me</sub> · 𝑋<sub>𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑡𝑖me</sub>
 
 This will return an array with size of the numbers of trucks, having as many values in each list as number of requests.
 
