@@ -12,6 +12,6 @@ The problems leads to dissatisfied users, if the days are prolonged and the requ
 
 To solve this, the basic outline is made, which is having a list of priorities (zeros) and a list of inattention days (zeros), and if a request is remained unattended that day, the next day it takes part in requests to be solved and its inattention days adds up.
 
-If the number of inattention days for a specific request exceeds a limit, for example 10, meaning the request has undergone >10 days of inattention. It will immediately be prioritized (0 converted to 1 in list), and before attending any requests when running the application again the following day, the priority request will be the first one to attend not mattering what is its global cost and how high it is.
+If the number of inattention days for a specific request exceeds a limit, for example 10, meaning the request has undergone >10 days of inattention. It will immediately be prioritized (0 converted to 1 in list, thinking of a bit value), and before attending any requests when running the application again the following day, the **priority request** will be the first one to be attended, not mattering what is its global cost and how high it is.
 
 This ensures satisfation of users, so that the system resolves all requests, meaning that the trucks resolve the requests, even if it takes a while for them to arrive and dispose the object/s.
