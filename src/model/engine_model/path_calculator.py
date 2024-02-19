@@ -1,12 +1,6 @@
-# from scipy.spatial import distance
-import osmnx as ox
-import geopandas as gpd
-import networkx as nx
 import numpy as np
 import requests
 
-
-# google map to calculate real distance from coordinates
 class PathCalculator:
 
     def __init__(self,graphhopper_api_key):
