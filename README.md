@@ -88,9 +88,9 @@ docker pull your-dockerhub-username/trashtrek:latest
 ```shell
 git clone https://github.com/KrishT97/trashtrek.git
 ```
-2. Navigate to the Project Directory
+2. Navigate to the Project Directory within the _src_ folder
 ```shell
-cd trashtrek
+cd trashtrek/src
 ```
 3. Build the Docker Image
 ```shell
