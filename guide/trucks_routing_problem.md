@@ -11,7 +11,7 @@ requests that are situated furthest from base, will lead to higher costs and wou
 A way to tackle this implementation is to follow this approach:
 
 Now, for each of the costs calculated we want to add the cost for that specific request location returning 
-back to the base location, for this, whilst retrieving the distance and time in graphHopper routing api in the main
+back to the base location, for this, whilst retrieving the distance and time in GraphHopper Routing API in the main
 logic in this line of code:
 
 `path_calculator.calculate_graphhopper(model_data.trucks_coordinates, model_distance.requests_coordinates)`
