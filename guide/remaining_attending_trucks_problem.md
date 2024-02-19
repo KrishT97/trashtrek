@@ -1,6 +1,6 @@
 ## What if there is only one truck available to attend the requests?
 
-It just so happens that the ModelValidator class is responsible for the verification of all the requirements being fulfilled in terms of the restrictions that the trucks have (truck capacity, limit of time worked, unique assignment..etc) which can alter the matrices of the assignments of trucks to requests. 
+It just so happens that the _ModelValidator_ class is responsible for the verification of all the requirements being fulfilled in terms of the restrictions that the trucks have (truck capacity, limit of time worked, unique assignment..etc), which in turn, can alter the matrices of the assignments of trucks to requests. 
 
 Suppose the following example:
 
@@ -18,15 +18,15 @@ $$  \begin{bmatrix}
 
  As it might be interpretable, there are 3 Trucks and 7 Requests. 
  
- Turns out, the algorithm detects that Truck 2 and 3 
- have gotten close to occupying it's maximum capacity. I say close because it wouldn't be precise to have a restriction that 
- the capacity of the objects in the trucks are occupying shouldn't be equal to or more than the truck's maximum capacity, by 
+ As an example, it turns out, the algorithm detects that Truck 2 and 3 
+ have gotten close to occupying it's maximum capacity. I say close because it wouldn't be accurate to have a restriction for which: 
+ _the capacity of the objects in the trucks are occupying **shouldn't be equal to or more than the truck's maximum capacity**_, we expect that by 
  **getting close to the maximum capacity**, the truck should be not available. For example if the maximum capacity of the truck
  is 10 m3, then reaching 9 m3 should be sufficient enough to say that the truck should return to base and can't attend any 
  more requests.
 
  Back to the example, if both Trucks 2 and 3 have not complied with the maximum capacity restriction, then they will be
- removed from the variable matrix of assignments, thus leading to this situation:
+ removed from the variable: matrix of assignments, thus leading to this situation:
  
 ```math
 $$  \begin{bmatrix}
