@@ -75,7 +75,7 @@ than the specified could attend all requests more efficiently**?
 
 Yes, however this implementation is not made and may require multiple events running in parallel to find the best search, and providing more optimal solutions upon findings. Or simply using another, more complex, selection method to not consider all trucks, but even a subset amongst those present to find the most efficient route. However it may seem that the approach is also more computing-intensive, an optimization problem scaled in complexity, but could be a part of a _further investigation proposal_.  
 
-Hovever, and to contradict the above theory from one perspective, we want to consider that the trucks **should all be operational**, for which the specification of it in the initial data makes it be considered no matter where located in the map.
+However, and to contradict the above theory from one perspective, we want to consider that the trucks **should all be operational**, for which the specification of it in the initial data makes it be considered no matter where located in the map.
 
 Due to this, the trucks, even if located in the south region have to attend requests in the north region. 
 One advantage of this system (considering all trucks) amongst other, is the load balance. 
