@@ -80,7 +80,7 @@ There are two options:
 The docker image can be found in Docker Hub, with a simple pull request using the following command the app can be run in your local machine:
 
 ```shell
-docker pull your-dockerhub-username/trashtrek:latest
+docker pull krisht97/trashtrek:latest
 ```
 **b) Build the image with the github repository**
 
