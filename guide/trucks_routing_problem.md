@@ -19,11 +19,13 @@ logic in this line of code:
 For this, instead of obtaining the one way distance and time for the requests in here:
 
 `road_distances[i, j] = distance / 1000  # km`
+
 `time_estimated[i, j] = time / 60000  # minutes`
 
 After the section, an additional factor will now be added, making a new request to the API, for the distances and time taken between the requests and the initial truck coordinates (base coordinates) as such:
 
  `road_distances[i, j] += distance_return / 1000  # km`
+ 
  `time_estimated[i, j] += time_return / 60000  # minutes`
 
   This solves the issue, distance and time taken of returning routes that are large will consequently mean that the 
