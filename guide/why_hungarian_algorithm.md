@@ -61,7 +61,7 @@ Other problems may occur, for example if there are _identical minimum values for
 
 ### Hungarian Algorithm to the rescue
 
-The Hungarian Algorithm is an efficient algorithm for finding the optimal allocation in an allocation problem (in this case, trucks to requests) with associated costs. 
+The Hungarian Algorithm is an efficient algorithm for finding the optimal allocation in a given problem (in this case, trucks to requests) with associated costs. 
 This algorithm guarantees an optimal solution and addresses convergence issues that may arise in iterative approaches.
 
 Straightforward application:
