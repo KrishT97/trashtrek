@@ -1,4 +1,4 @@
-# TrashTrek Web Service🚀
+# TrashTrek Web Service
 ## Optimization of Truck Logistics for the Disposal of Voluminous Waste: A Multicriteria Approach
 
 ### Description
