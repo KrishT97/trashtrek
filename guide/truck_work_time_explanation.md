@@ -7,6 +7,8 @@ However, this is a complicated task, as the assignment matrix remains stagnant, 
 
 As mentioned, the **time estimated array** (time in minutes estimations in array) is only considered for those requests that are not assigned, so we can't directly assign the indices also, because it is modified and we have to associate the right indices. 
 
+Within each update of the time calculation, the **average attendance time in minutes** gets added towards the attendance of a petition. Which means that apart from adding the time taken for the journey, there is also an extra time added for resolving the petition, to not generate any bias, this data is asked as an environment variable of the application.
+
 ### Iteration 1
 
 Now say we start out with this matrix as our assignment of truck & request matrix (the column being each truck and row, each request):
