@@ -23,7 +23,6 @@ def run_application():
 
         app.logger.info(f"RECEIVED JSON DATA: \n {data}")
 
-        # Extract data from JSON
         limit_work_minutes = data['dailyLimitWorkInMinutes']
         maximum_inattention_days = data['maximumInattentionDays']
         maximum_trucks = data['maximumTrucksDefined']
@@ -45,9 +44,15 @@ def run_application():
         if not graphhopper_api_key:
             raise ValueError("GRAPHHOPPER_API_KEY environment variable is not set. Please provide your API key.")
 
+        average_attendance_time = float(os.environ.get('AVERAGE_ATTENDANCE_TIME_IN_MINUTES'))
+
+        if not average_attendance_time:
+            raise ValueError("AVERAGE_ATTENDANCE_TIME_IN_MINUTES environment variable is not set. "
+                             "Please provide the information on average attendance time.")
+
         result = run_logic(limit_work_minutes, maximum_inattention_days, maximum_trucks, maximum_truck_capacity,
                            drivers, trucks,
-                           requests, request, app, graphhopper_api_key)
+                           requests, request, app, graphhopper_api_key, average_attendance_time)
         app.logger.info(f"RESULTS GENERATED: \n {result}")
 
         return jsonify({"message": "Success!", "result": result})

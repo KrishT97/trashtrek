@@ -15,19 +15,20 @@ def run_logic(limit_work_minutes,
               drivers,
               trucks,
               requests,
-              request, app, graphhopper_api_key):
-
+              request, app, graphhopper_api_key, average_attendance_time):
     model_data = ModelData(requests, drivers, trucks)
     model_distance = ModelDistance(requests)
     model_validator = ModelValidator(model_data.trucks_coordinates, model_data.requests_coordinates,
                                      model_data.volumes_requests, model_data.assignment_truck_request,
                                      model_data.requests_priorities, model_data.inattention_days)
-    path_calculator = PathCalculator(graphhopper_api_key)
-    path_calculator.store_initial_data(model_data.trucks_coordinates)
     display = Display(graphhopper_api_key)
-    display.store_initial_data(model_data.trucks_coordinates)
+    path_calculator = PathCalculator(graphhopper_api_key)
     distance_normalizer = DistanceNormalizer()
     minimum_calculator = MinimumCalculator()
+
+    path_calculator.store_initial_data(model_data.trucks_coordinates)
+    display.store_initial_data(model_data.trucks_coordinates)
+    model_validator.store_attendance_time(average_attendance_time)
     model_validator.add_limits(maximum_truck_capacity, limit_work_minutes, maximum_inattention_days, maximum_trucks)
 
     # SHOW INITIAL DATA
@@ -42,7 +43,7 @@ def run_logic(limit_work_minutes,
     activate_display = True
 
     # MAIN ALGORITHM LOOP
-    for i in range(100):
+    for i in range(1, 100):
 
         app.logger.info("---------------------------------------------------------------------- \n")
 
