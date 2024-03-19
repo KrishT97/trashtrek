@@ -10,7 +10,7 @@ class ModelValidator:
         self.maximum_trucks, self.maximum_inattention_days = None, None
         self.limit_work_minutes, self.maximum_truck_capacity = None, None
         self.terminate = False
-        self.time_estimated = None
+        self.time_estimated, self.average_attendance_time = None, None
         self.sum_minutes_per_truck = np.zeros(len(trucks_coordinates))
         self.indices_associations = list(range(0, len(requests_coordinates)))
 
@@ -23,6 +23,9 @@ class ModelValidator:
         self.trucks_coordinates, self.requests_coordinates = trucks_coordinates, requests_coordinates
         self.volumes_requests, self.assignment_truck_request = volumes_requests, assignment_truck_request
         self.requests_priorities, self.inattention_days = requests_priorities, inattention_days
+
+    def store_attendance_time(self, average_attendance_time):
+        self.average_attendance_time = average_attendance_time
 
     def add_limits(self, maximum_truck_capacity, limit_work_minutes, maximum_inattention_days, maximum_trucks):
         self.maximum_truck_capacity, self.limit_work_minutes = maximum_truck_capacity, limit_work_minutes
@@ -40,6 +43,7 @@ class ModelValidator:
             sorted_result = (result[0][indices], result[1][indices])
             for i in range(len(self.sum_minutes_per_truck)):
                 self.sum_minutes_per_truck[i] += self.time_estimated[sorted_result[1], sorted_result[0]][i]
+                self.sum_minutes_per_truck[i] += self.average_attendance_time
             self.indices_associations = [ele for ele in self.indices_associations if ele not in sorted_result[0]]
         elif len(self.time_estimated[0]) != len(self.requests_coordinates):
             new_indices = list(range(0, len(self.indices_associations)))
@@ -56,9 +60,11 @@ class ModelValidator:
                 lst_results.extend(key)
             if len(lst_results) == 1:
                 self.sum_minutes_per_truck[int(sorted_result[1])] += float(self.time_estimated[sorted_result[1]])
+                self.sum_minutes_per_truck[int(sorted_result[1])] += self.average_attendance_time
             else:
                 for i in range(len(lst_results)):
                     self.sum_minutes_per_truck[i] += self.time_estimated[sorted_result[1], lst_results][i]
+                    self.sum_minutes_per_truck[i] += self.average_attendance_time
             self.indices_associations = [i for i in self.indices_associations if i not in matches]
 
     def check_limit_minutes_worked(self):
