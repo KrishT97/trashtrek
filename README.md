@@ -106,11 +106,12 @@ The Flask app inside the Docker container always listens on port 5000, and users
 ### Environment Variables
 
 * `GRAPHHOPPER_API_KEY` - It is a mandatory requirement you provide a GraphHopper API key
+* `AVERAGE_ATTENDANCE_TIME_IN_MINUTES` - Indicate as per prior knowledge to not generate any bias, the average vehicle attendance time to requests in minutes.
 
 ### Running the Docker Container
 
 ```
-docker run -p YOUR_CHOSEN_PORT:5000 -e GRAPHHOPPER_API_KEY='YOUR_API_KEY' trashtrek:latest
+docker run -p YOUR_CHOSEN_PORT:5000 -e GRAPHHOPPER_API_KEY='YOUR_API_KEY' -e AVERAGE_ATTENDANCE_TIME_IN_MINUTES=YOUR_TIME trashtrek:latest
 ```
 
 ### Access the Application
