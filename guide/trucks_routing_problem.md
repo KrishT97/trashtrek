@@ -53,3 +53,4 @@ For waste disposal trucks, it's common for them to start and end their routes at
 
 Including the return journey in the optimization algorithm enhances its robustness by preventing solutions that might seem optimal only because they ignore the return leg. This can lead to more reliable and realistic route plans.
 
+Apart from the _return to base_ distance time summed, the average attendance time for each petition is also added when assigning a truck to a given petition.
