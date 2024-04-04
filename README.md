@@ -1,4 +1,6 @@
-# TrashTrek Web Service
+<h1>TrashTrek Web Service <img align="center" height="50" src="https://github.com/KrishT97/trashtrek/blob/main/extras/trashtrek_logo.png"></h1>
+
+
 ## Optimization of Truck Logistics for the Disposal of Voluminous Waste: A Multicriteria Approach
 
 ### Description
