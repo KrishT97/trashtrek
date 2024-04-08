@@ -57,7 +57,7 @@ what is done, is to choose the "second minimum" for second iterations forward. B
 to the minimum value and the second minimum, and those two convergence values ​​are chosen, not taking into account other values.
 
 Other problems may occur, for example if there are _identical minimum values for global costs in two or more trucks_. 
-**Which truck is then prioritized?** The idea is that all trucks work collectively, where one truck attends certain requests and another, others in line, in the manner of which one compensates the aother.
+**Which truck is then prioritized?** The idea is that all trucks work collectively, where one truck attends certain requests and another, others in line, in the manner of which one compensates the other.
 
 ### Hungarian Algorithm to the rescue
 
