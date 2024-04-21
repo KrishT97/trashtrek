@@ -14,7 +14,9 @@ The weights are defined for each parameter, and the lists of arrays are normaliz
 
 globalCost= 𝑤<sub>dist</sub> · 𝑋<sub>𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑑𝑖𝑠𝑡</sub> − 𝑤<sub>𝑜𝑐𝑢𝑝</sub> · 𝑋<sub>𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑜𝑐𝑢𝑝</sub> + 𝑤<sub>𝑡𝑖me</sub> · 𝑋<sub>𝑛𝑜𝑟𝑚𝑎𝑙𝑖𝑧ed_𝑡𝑖me</sub>
 
-This will return an array with size of the numbers of trucks, having as many values in each list as number of requests.
+Before applying the global costs, it would be necessary to normalize the three parameters to have them be comparable against one another (as the three are in different scales). There is a verification procedure to validate the sizes of the lists containing the data, if there is only one data, it is not possible to normalize. Thus a technique is applied, which consists in dividing the value by a fixed maximum (determined through empirical analysis).
+
+The global costs will return an array with size of the numbers of trucks, having as many values in each list as number of requests.
 
 With 3 trucks and 10 requests as an example, there will be 30 values.
 
