@@ -17,4 +17,5 @@ trucks = [Truck(1, 10, (28.093512, -15.425922)), Truck(2, 10, (28.128852, -15.50
           Truck(3, 10, (27.755366, -15.604631))]
 ```
 Now for any other requests down the line, the distance calculations between trucks and requests in next iterations will take the positions for the trucks above updated. 
-This implementation is made as the vehicles are not stagnant within each iteration and keep moving around the map depending on the requests they attend, the location for which, are updated and we take the new location as new coordinates for the given truck. 
+
+This implementation is made as the vehicles are not stagnant within each iteration and keep moving around the map depending on the requests they attend, the location for which, are updated, and we take the new location as new coordinates for the given truck. 
