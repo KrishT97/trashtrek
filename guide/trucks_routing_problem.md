@@ -28,11 +28,23 @@ After the section, an additional factor will now be added, making a new request 
  
  `time_estimated[i, j] += time_return / 60000  # minutes`
 
-  This solves the issue, distance and time taken of returning routes that are large will consequently mean that the 
-  request is located far away from base, and if the truck travels to that location, it also has to be able to come 
-  back leading to additional consumption. Leading to higher parameter and global costs associated to the request. 
+This solves the issue, distance and time taken of returning routes that are large will consequently mean that the 
+request is located far away from base, and if the truck travels to that location, it also has to be able to come 
+back leading to additional consumption. Leading to higher parameter and global costs associated to the request. 
 
-A few advantages to this proposal and its implementation:
+The working time for each vehicle (truck) is updated to consider the bidirectional timings and the addition of the average attendance request time given by the user whilst running the application as an environment variable. Leading to the following formula for a given iteration x:
+
+$$ vwt_i = trr + atr + trb $$
+
+- vwt = vehicle total working time
+- tar = road **time** estimated in minutes for **reaching the request**
+- atr = average attendance time for the given request
+- trb = road **time** estimated to **return** to **base** from request location
+
+The total working time is captured which doesn't reflect the _active working time_, both are two different concepts. The active time is estimated to be the time the vehicle takes to reach the request in addition to the attendance time. Considering the returning back to base helps to add an additional layer of cost, as mentioned before, so that the vehicle does not travel far away from base (as it is a necessary requirement for it to return to dispose the bulky waste collected) and it helps the operators understand the real actual total time taken to finalize the route by ending to base.
+
+
+A few advantages to the proposal of returning to base and its implementation:
 - Realistic Scenario Modeling:
 
 In real-world scenarios, vehicles, like trucks, often need to return to a central location or base after completing their tasks. Ignoring the return journey might result in suboptimal routes and inaccurate cost estimations.
