@@ -37,7 +37,7 @@ The working time for each vehicle (truck) is updated to consider the bidirection
 $$ vwt_i = trr + atr + trb $$
 
 - vwt = vehicle total working time
-- tar = road **time** estimated in minutes for **reaching the request**
+- trr = road **time** estimated in minutes for **reaching the request**
 - atr = average attendance time for the given request
 - trb = road **time** estimated to **return** to **base** from request location
 
