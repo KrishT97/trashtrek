@@ -146,7 +146,7 @@ The route mapping (_attendance in order_):
 
 ** _Within the visualization, the order is displayed **by the trucks** and not the actual global attendance, therefore mapped to be sequential by truck index. This data is shown within the assignedRequestsOrderByTruck variable in the results section. The reason is supposing that all vehicles will travel at the same time or schedule, seeing the assignment ordered by each truck index will better visualize the route each truck follows independently._
 
-Now, visualizing the results obtained from the routing:
+Now, visualizing the results obtained from the routing (_the object drawings are not part of the visualization but serve as illustration for this example):
 
 <img src="https://github.com/KrishT97/trashtrek/blob/main/extras/visualization_results3.png" width="600"/>
 
